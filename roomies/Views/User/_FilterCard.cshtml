@@ -1,0 +1,69 @@
+﻿@model HomeViewModel
+<div class="col-md-3 row-md-5 right-menu">
+    <div class="row">
+        <div class="col-md-12 form-group">
+            <label asp-for="@Model.Filter.type"></label>
+            <select asp-for="@Model.Filter.type" asp-items="@Model.PropTypeList" class="form-control">
+            </select>
+            <span asp-validation-for="@Model.Filter.type" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row">
+        <span>Enter Your Budget range : </span>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="@Model.Filter.MinBudget"></label>
+                <input asp-for="@Model.Filter.MinBudget" class="form-control" placeholder="Min Budget" />
+                <span asp-validation-for="@Model.Filter.MinBudget" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="@Model.Filter.MaxBudget"></label>
+                <input asp-for="@Model.Filter.MaxBudget" class="form-control" placeholder="Max Budget" />
+                <span asp-validation-for="@Model.Filter.MaxBudget" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <span>How many Rooms you want in flat : </span>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="@Model.Filter.MinRoomCount"></label>
+                <input asp-for="@Model.Filter.MinRoomCount" class="form-control" placeholder="Min Rooms" />
+                <span asp-validation-for="@Model.Filter.MinRoomCount" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="@Model.Filter.MaxRoomCount"></label>
+                <input asp-for="@Model.Filter.MaxRoomCount" class="form-control" placeholder="Max Rooms" />
+                <span asp-validation-for="@Model.Filter.MaxRoomCount" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <span>How many Peoples you can share with : </span>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="@Model.Filter.MinSharingCount"></label>
+                <input asp-for="@Model.Filter.MinSharingCount" class="form-control" placeholder="Min Sharing" />
+                <span asp-validation-for="@Model.Filter.MinSharingCount" class="text-danger"></span>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="@Model.Filter.MaxSharingCount"></label>
+                <input asp-for="@Model.Filter.MaxSharingCount" class="form-control" placeholder="Max Sharing" />
+                <span asp-validation-for="@Model.Filter.MaxSharingCount" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <div class="col-md-12 form-group">
+                <button class="btn btn-success" asp-controller="User" asp-action="ApplayFilter">Applay Filters</button>
+            </div>
+        </div>
+    </div>
+</div>

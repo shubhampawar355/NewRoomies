@@ -1,0 +1,19 @@
+﻿@model HomeViewModel 
+
+
+<div class="row container no-gutters div-sticky" style="position: sticky;">
+
+    <!--LEFT SIDE MAIN PAGE CONTENT-->
+    <div class="col-md-8 row-md-5" style="position: relative;">
+
+        @foreach (var Room in Model.rooms)
+        {
+            var roomCard = new RoomCardModel(Room);
+           <partial name="_RoomCard" model="roomCard" />
+        }
+    </div>
+    <!--Space between left n right menu-->
+    <div class="col-md-1 " ></div>
+        <!--RIGHT SIDE FILTERS-->
+    <partial name="_FilterCard" model="Model" />
+    </div>

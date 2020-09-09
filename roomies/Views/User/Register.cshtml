@@ -1,0 +1,69 @@
+﻿@model RegisterViewModel
+
+<h3>Register Here</h3>
+
+<form method="post">
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label asp-for="User.Name"></label>
+            <input asp-for="User.Name" class="form-control" placeholder="Enter Full Name" />
+            <span asp-validation-for="@Model.User.Name" class="text-danger"></span>
+        </div>
+        <div class="col-md-6 form-group">
+            <label asp-for="User.Email"></label>
+            <input asp-for="User.Email" class="form-control" placeholder="This will your UserId" />
+            <span asp-validation-for="@Model.User.Email" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label asp-for="@Model.User.Gender"></label>
+            <select asp-for="@Model.User.Gender" asp-items="@Model.Gender" class="form-control">
+            </select>
+            <span asp-validation-for="@Model.Gender" class="text-danger"></span>
+        </div>
+        <div class="col-md-6 form-group">
+            <label asp-for="@Model.User.PhoneNo"></label>
+            <input asp-for="@Model.User.PhoneNo" class="form-control" placeholder="Enter Phone Number" />
+            <span asp-validation-for="@Model.User.PhoneNo" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 form-group">
+            <label asp-for="@Model.User.Password"></label>
+            <input asp-for="@Model.User.Password" class="form-control" placeholder="Enter Password" />
+            <span asp-validation-for="@Model.User.Password" class="text-danger"></span>
+        </div>
+        <div class="col-md-6 form-group">
+            <label asp-for="@Model.User.ConfirmPassword"></label>
+            <input asp-for="@Model.User.ConfirmPassword" class="form-control" placeholder="Re-enter Password"/>
+            <span asp-validation-for="@Model.User.ConfirmPassword" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-3" style="align-content: center;">
+            <button class="btn btn-success" asp-controller="User" asp-action="AfterRegister">Register</button>
+        </div>
+        <div class="col-md-3">
+            <a asp-controller="User" asp-action="LogIn" class="btn btn-info">
+                <span>Goto LogIn</span>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a asp-controller="Home" asp-action="About" class="btn btn-info">
+                <span>AboutUs</span>
+            </a>
+        </div>
+        <div class="col-md-3">
+            <a asp-controller="Home" asp-action="Index" class="btn btn-danger">
+                <span>Cancel</span>
+            </a>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

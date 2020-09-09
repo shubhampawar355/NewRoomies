@@ -1,0 +1,84 @@
+﻿@model RoomCardModel
+
+<div class="row container no-gutters div-sticky ">
+    <div class="col-md-12 row-md-5" style="position: relative;">
+        <div class="row">
+            <div class="container-fluid make-center">
+                <div class="card mt-2" style="background-color: cadetblue">
+
+                    <div class="card-header h5">
+                        <div class="row">
+                            <div class="col-md-3">Review: @Model.Room.ValidateStatus</div>
+                            <div class="col-md-6">Date: @Model.Room.PostDate</div>
+                            <div class="col-md-3" style="color:white">Rent: @Model.Room.Rent </div>
+                        </div>
+                    </div>
+                    <!--CARD BODY SECTION IS DYNAMIC-->
+                    <div class="card-body pb-0 pt-0 pl-0 pr-0">
+
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="card">
+                                    <img class="card-img" src="~/Images/garden.jpg" alt="Card image" style="width:100%;">
+                                </div>
+                            </div>
+                            <div class="col-md-5" style="text-align: center;font-family: serif;">
+                                        <label>Room Details:</label>
+                                        <div style="text-align: center;font-family: serif;"
+                                             class="rounded">
+                                            <p>@Model.Room.Description</p>
+                                        </div><br>
+                                        <label>Address details :</label>
+                                        <div style="text-align: center; font-family: serif;"
+                                             class="rounded">
+                                            City : @Model.Room.Location.City<br>
+                                            Landmark : @Model.Room.Location.Landmark<br>
+                                            Street : @Model.Room.Location.Street<br>
+                                            Pincode : @Model.Room.Location.PinCode<br>
+                                        </div><br>
+                                        <label> Owner Details :</label>
+                                        <div style="font-family: serif;text-align: center;"
+                                             class="rounded">
+                                            Name : @Model.Room.Owner.Name<br>
+                                            Email : @Model.Room.Owner.Email<br>
+                                            Contact : @Model.Room.Owner.PhoneNo<br>
+                                        </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                    <!--CARD FOOTER SECTION-->
+                    <div class="card-footer d-flex justify-content-between pb-1">
+                        <div>
+                            <a asp-controller="User" asp-action="RequestRoom" class="btn btn-info">
+                                <span>Request Room</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a asp-controller="User" asp-action="RemoveRequest" class="btn btn-info">
+                                <span>Remove Request</span>
+                            </a>
+                        </div>
+                        <div>
+                            <a asp-controller="User" asp-action="Home" class="btn btn-info">
+                                <span>Remove Request</span>
+                            </a>
+                        </div>
+                        <span class="btn btn-warning">
+                            Views : views
+                        </span>
+                        <div>
+                            <a asp-controller="User" asp-action="ReposrtSpam" class="btn btn-danger">
+                                <span>Report Spam</span>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
